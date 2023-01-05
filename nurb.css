@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html{
+    background: black;
+    height: 100%;
+    width: 100%;
+    font-family: 'Verdana', sans-serif;
+}
+
+
+.tabs{
+    display: flex;
+}
+
+#mugshot{
+    width: 100%;
+    height: 100%;
+}
+
+
+.tabs-sidebar{
+    width: 200px;
+    flex-shrink: 0;
+    background: black;
+    height: 100%;
+    position: static;
+}
+
+.tabs-button{
+    display: block;
+    padding: 9px;
+    background: black;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    margin: 0px;
+
+
+    /* 3D Effect */
+    color: white;
+    border: solid #0000;
+    border-width: .1em .1em calc(20px + .1em) calc(20px + .1em);
+    background:
+    conic-gradient(at left 20px bottom 20px,#0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,conic-gradient(at left calc(20px + .1em) bottom calc(20px + .1em),#0000 90deg,white 0) 0 100%/calc(100% - .1em) calc(100% - .1em)  border-box;
+    transform: translate(calc(20px/-1),20px);
+    clip-path: polygon(20px 0%, 20px 0%, 100% 0%, 100% calc(100% - 20px),100% calc(100% - 20px), 20px calc(100% - 20px));
+    transition: 1s;
+}
+
+.tabs-button:active{
+    background: darkgrey;
+}
+
+.tabs-button:hover{
+    transform: translate(0,0);
+    clip-path: polygon(0% 20px, 20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%
+   );
+}
+
+[data-tab-info] {
+    display: none;
+}
+
+.tabs-content--active[data-tab-info] {
+    display: block;
+    color: white;
+    
+}
+
+.tabs-content{
+    width: 100%;
+    height: 100%;
+}
+
+table, th, td {
+    border: 2px white;
+    border-style: inset;
+}
+
+/*Typewrite*/
+.type{
+    color: #0000;
+    overflow: hidden;
+    background:
+        linear-gradient(-90deg,white 2px,#0000 0) 0px 0,
+        linear-gradient(white 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: 
+        typing 0.7s infinite step-end,   
+        blink-caret calc(var(--n)*.045s) steps(var(--n)) forwards;
+}
+span{
+    font-size: max(24px);
+}
+
+#nurbrunning, #nurb_dance, #nurb_soccer{
+    width: max(30%);
+    border-radius: 5%;
+    padding: 10px
+}
+.images-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+@keyframes blink-caret{
+    from {background-size:0 100%}
+}
+@keyframes typing{
+    from {width: 0} to {width: 100%}
+}
+
+/*UVA 2025 -> Accordion*/
+.accordion{
+    max-width: 100%;
+    overflow: hidden;
+    background-color: rgb(51,51,51);
+}
+
+.accordion__label, .accordion__content{
+    padding: 14px 20px;
+}
+
+.accordion__label{
+    display: block;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+    text-align: center;
+}
+
+.accordion__label:hover{
+    background-color: black;
+}
+
+.accordion__content{
+    background: black;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+    padding: 50px;
+}
+
+.accordion__input{
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content{
+    display: block;
+}
+
+#uvalogo{
+    filter: invert(100%);
+    display: block;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3, h2, h1{
+    text-align: center;
+}
